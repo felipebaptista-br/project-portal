@@ -1,0 +1,16 @@
+header {
+    display: flex;
+    width: 100vw;
+    height: 10vh;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    background-color: #122B3D;
+    box-shadow: 0 0 1.5em #121212;
+}
+
+.icon-github {
+    cursor: pointer;
+    color: #ffffff;
+    margin-left: 5rem;
+}
