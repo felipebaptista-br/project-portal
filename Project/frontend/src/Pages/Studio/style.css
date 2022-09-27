@@ -1,0 +1,79 @@
+.studio-container {
+    width: 100%;
+    height: 100vh;
+    padding: 8.5rem 10rem;
+}
+
+.studio-content {
+    width: 40rem;
+}
+
+.studio-content h2 {
+    font-weight: 900;
+}
+
+.studio-section-buttons {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.studio-button {
+    width: 20rem;
+    display: flex;
+    padding: 15px;
+    align-items: center;
+    justify-content: space-between;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.cancel-button {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: #d7d7d7;
+}
+
+.cancel-button:hover {
+    background-color: #9e9e9e;
+}
+
+.avanced-button {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #116b98;
+    color: #fff;
+}
+
+.avanced-button:hover {
+    background-color: #093d58;
+}
+
+.studio-result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6.5rem;
+}
+
+.studio-icon-back {
+    border-radius: 50px;
+    background-color: #f3f3f3;
+    box-shadow: 0 0 0.5em #c9c9c9;
+}
+
+.studio-icon-back:hover {
+    background-color: #e1e1e1;
+}
+
+.studio-result-button {
+    height: 3.5rem;
+    margin-left: 5rem;
+    border-radius: 10px;
+    background-color: #f3f3f3;
+    box-shadow: 0 0 0.5em #c9c9c9;
+}
+
+.studio-result-button:hover {
+    background-color: #e1e1e1;
+}
