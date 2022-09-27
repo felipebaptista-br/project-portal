@@ -6,7 +6,7 @@ import "./style.css";
 export default function Card({ item }) {
 
     async function handleGitLink() {
-        window.location.href = item.link_github 
+        window.location.assign(item.link_github)
     } 
 
     return(

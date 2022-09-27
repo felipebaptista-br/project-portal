@@ -48,3 +48,32 @@
 .avanced-button:hover {
     background-color: #093d58;
 }
+
+.studio-result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6.5rem;
+}
+
+.studio-icon-back {
+    border-radius: 50px;
+    background-color: #f3f3f3;
+    box-shadow: 0 0 0.5em #c9c9c9;
+}
+
+.studio-icon-back:hover {
+    background-color: #e1e1e1;
+}
+
+.studio-result-button {
+    height: 3.5rem;
+    margin-left: 5rem;
+    border-radius: 10px;
+    background-color: #f3f3f3;
+    box-shadow: 0 0 0.5em #c9c9c9;
+}
+
+.studio-result-button:hover {
+    background-color: #e1e1e1;
+}

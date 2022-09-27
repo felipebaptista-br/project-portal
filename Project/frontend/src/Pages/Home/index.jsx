@@ -6,6 +6,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Header from "../../Components/Header";
 import Card from "../../Components/Card";
 import Footer from "../../Components/Footer";
+import api from "../../Services/api";
 
 import "./style.css";
 
@@ -22,98 +23,11 @@ export default function Home() {
     }
 
     useEffect(() => {
-        setData([
-            {
-                'title' : 'Projeto Exemplo',
-                'description' : 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo laudantium iusto...',
-                'link_github' : 'www.github.com.br',
-            },
-            {
-                'title' : 'Projeto Exemplo',
-                'description' : 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo laudantium iusto...',
-                'link_github' : 'www.github.com.br',
-            },
-            {
-                'title' : 'Projeto Exemplo',
-                'description' : 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo laudantium iusto...',
-                'link_github' : 'www.github.com.br',
-            },
-            {
-                'title' : 'Projeto Exemplo',
-                'description' : 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo laudantium iusto...',
-                'link_github' : 'www.github.com.br',
-            },
-            {
-                'title' : 'Projeto Exemplo',
-                'description' : 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo laudantium iusto...',
-                'link_github' : 'www.github.com.br',
-            },
-            {
-                'title' : 'Projeto Exemplo',
-                'description' : 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo laudantium iusto...',
-                'link_github' : 'www.github.com.br',
-            },
-            {
-                'title' : 'Projeto Exemplo',
-                'description' : 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo laudantium iusto...',
-                'link_github' : 'www.github.com.br',
-            },
-            {
-                'title' : 'Projeto Exemplo',
-                'description' : 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo laudantium iusto...',
-                'link_github' : 'www.github.com.br',
-            },
-            {
-                'title' : 'Projeto Exemplo',
-                'description' : 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo laudantium iusto...',
-                'link_github' : 'www.github.com.br',
-            },
-            {
-                'title' : 'Projeto Exemplo',
-                'description' : 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo laudantium iusto...',
-                'link_github' : 'www.github.com.br',
-            },
-            {
-                'title' : 'Projeto Exemplo',
-                'description' : 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo laudantium iusto...',
-                'link_github' : 'www.github.com.br',
-            },
-            {
-                'title' : 'Projeto Exemplo',
-                'description' : 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo laudantium iusto...',
-                'link_github' : 'www.github.com.br',
-            },
-            {
-                'title' : 'Projeto Exemplo',
-                'description' : 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo laudantium iusto...',
-                'link_github' : 'www.github.com.br',
-            },
-            {
-                'title' : 'Projeto Exemplo',
-                'description' : 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo laudantium iusto...',
-                'link_github' : 'www.github.com.br',
-            },
-            {
-                'title' : 'Projeto Exemplo',
-                'description' : 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo laudantium iusto...',
-                'link_github' : 'www.github.com.br',
-            },
-            {
-                'title' : 'Projeto Exemplo',
-                'description' : 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo laudantium iusto...',
-                'link_github' : 'www.github.com.br',
-            },
-            {
-                'title' : 'Projeto Exemplo',
-                'description' : 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo laudantium iusto...',
-                'link_github' : 'www.github.com.br',
-            },
-            {
-                'title' : 'Projeto Exemplo',
-                'description' : 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo laudantium iusto...',
-                'link_github' : 'www.github.com.br',
-            },
-        ])
+        api.get("/list").then((response) => {
+            console.log(response)
+            setData(response.data)
+        })
+        setData([])
     }, [])
     return(
         <main id="home">
