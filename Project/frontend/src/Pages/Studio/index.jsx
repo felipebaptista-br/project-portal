@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { BsArrowRightCircle } from "react-icons/bs";
 import { IoIosArrowRoundBack, IoIosAddCircle } from "react-icons/io";
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 import Alert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
-import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
 import Header from "../../Components/Header";
-import Form from "../../Components/Form";
 import Footer from "../../Components/Footer";
+import api from "../../Services/api";
 import $ from "jquery";
 
 import "./style.css";
@@ -18,6 +19,16 @@ export default function Studio() {
     let params = useNavigate()
 
     const handleAdvanced = async () => {
+        let name = document.querySelector('#input_name').value
+        let description = document.querySelector('#input_description').value
+        let link = document.querySelector('#input_link').value
+        api.post("/add", {
+            "title": name,
+            "description": description,
+            "link_github": link
+        }).then((response) => {
+            console.log(response)
+        })
         $("#progress").show()
         const timer = setInterval(() => {
             setProgress((oldProgress) => {
@@ -56,10 +67,23 @@ export default function Studio() {
                 <div className="studio-container">
                     <div id="studio_content" className="studio-content">
                         <h2>Adicionar novo Projeto</h2>
-                        <Form />
+                        <form>
+                            <Box
+                                component="form"
+                                sx={{
+                                    '& > :not(style)': { m: 0, display: 'flex', width: '50ch', margin: '12px 0' },
+                                }}
+                                noValidate
+                                autoComplete="off"
+                            >
+                                <TextField id="input_name" label="Nome do Projeto" variant="outlined" required />
+                                <TextField id="input_description" label="Breve descrição" variant="outlined" required />
+                                <TextField id="input_link" label="Link do repositório" variant="outlined" required />
+                            </Box>
+                        </form>
                         <section className="studio-section-buttons">
                             <button className="studio-button cancel-button" onClick={handleBack}>Cancelar</button>
-                            <button className="studio-button avanced-button" onClick={handleAdvanced}>Avançar <BsArrowRightCircle size={20} /></button>
+                            <button className="studio-button avanced-button" onClick={handleAdvanced}>Avançar<BsArrowRightCircle size={20} /></button>
                         </section>
                         <Box sx={{ width: '100%', marginTop: '1rem' }}>
                             <LinearProgress id="progress" variant="determinate" value={progress} />

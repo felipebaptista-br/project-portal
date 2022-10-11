@@ -24,7 +24,6 @@ export default function Home() {
 
     useEffect(() => {
         api.get("/list").then((response) => {
-            console.log(response)
             setData(response.data)
         })
         setData([])

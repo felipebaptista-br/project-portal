@@ -1,12 +1,12 @@
 import React from "react";
-import Image from "../../Images/background-card.jpg";
+import Image from "../../Images/background-card-1.jpg";
 
 import "./style.css";
 
 export default function Card({ item }) {
 
     async function handleGitLink() {
-        window.location.assign(item.link_github)
+        window.location.href = item.link_github
     } 
 
     return(

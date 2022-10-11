@@ -1,3 +1,12 @@
+form {
+    width: 100%;
+    height: auto;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+}
+
 .studio-container {
     width: 100%;
     height: 100vh;
